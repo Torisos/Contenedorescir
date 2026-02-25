@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -39,42 +40,84 @@ class MainActivity : ComponentActivity() {
 @Preview(showSystemUi = true)
 @Composable
 fun ContentScreen() {
-    Column(modifier = Modifier
-        .background(Color.Magenta)
-        .padding(18.dp)
-        .fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally) {
-        Row(modifier = Modifier
-            .background(Color.Blue)
-            .padding(18.dp)
-            .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween) {
-            Text(
-                text = "Inicio",
+    Column() {
 
-                modifier = Modifier.background(Color.Red).padding(8.dp)
-            )
-            Text(
-                text = "Perfil",
+        Row(
+            modifier = Modifier.weight(1f)
+        ) {
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize()
+                    .background(Color(0xFFD0C2E8))
+                    .padding(20.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(text = "Text composable", fontWeight = FontWeight.Bold)
+                    Text(text = "Displays text and follows the recommended Material Design guidelines.")
+                }
 
-                modifier = Modifier.background(Color.Green).padding(8.dp)
-            )
-            Text(
-                text = "Configuracion",
+            }
 
-                modifier = Modifier.background(Color.Yellow).padding(8.dp)
-            )
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize()
+                    .background(Color(0xFFD0BCFF))
+                    .padding(20.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(text = "Image composable", fontWeight = FontWeight.Bold)
+                    Text(text = "Creates a composable that lays out and draws a given Painter class object.")
+                }
+            }
         }
 
-        Text("Titulo Principal",
-            modifier = Modifier.background((Color.Yellow)).padding(8.dp))
+        Row(
+            modifier = Modifier.weight(1f)
+        ) {
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize()
+                    .background(Color(0xFFD0BCFF))
+                    .padding(20.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(text = "Row Composable", fontWeight = FontWeight.Bold)
+                    Text(text = "A layout composable that places its children in a horizontal sequence.")
+                }
+            }
 
-        Text("Descripcion",
-            modifier = Modifier.background((Color.Yellow)).padding(8.dp))
-
-        Text("Otro Elemento",
-            modifier = Modifier.background((Color.Yellow)).padding(8.dp))
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize()
+                    .background(Color(0xFFD0C2E8))
+                    .padding(20.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(text = "Column Composable", fontWeight = FontWeight.Bold)
+                    Text(text = "A layout composable that places its children in a vertical sequence.")
+                }
+            }
+        }
     }
 }
 
