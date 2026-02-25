@@ -8,6 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -38,19 +39,42 @@ class MainActivity : ComponentActivity() {
 @Preview(showSystemUi = true)
 @Composable
 fun ContentScreen() {
-    Column(modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
+    Column(modifier = Modifier
+        .background(Color.Magenta)
+        .padding(18.dp)
+        .fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally) {
-        Image(
-            painter = painterResource(id = R.drawable.chulito),
-            contentDescription = null,
-            modifier = Modifier.size(200.dp)
-        )
-        Text("All Task Completed",
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 24.dp, bottom = 8.dp),)
+        Row(modifier = Modifier
+            .background(Color.Blue)
+            .padding(18.dp)
+            .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween) {
+            Text(
+                text = "Inicio",
 
-        Text("Nice Work!")
+                modifier = Modifier.background(Color.Red).padding(8.dp)
+            )
+            Text(
+                text = "Perfil",
+
+                modifier = Modifier.background(Color.Green).padding(8.dp)
+            )
+            Text(
+                text = "Configuracion",
+
+                modifier = Modifier.background(Color.Yellow).padding(8.dp)
+            )
+        }
+
+        Text("Titulo Principal",
+            modifier = Modifier.background((Color.Yellow)).padding(8.dp))
+
+        Text("Descripcion",
+            modifier = Modifier.background((Color.Yellow)).padding(8.dp))
+
+        Text("Otro Elemento",
+            modifier = Modifier.background((Color.Yellow)).padding(8.dp))
     }
 }
 
